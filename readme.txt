@@ -1,3 +1,2 @@
  rozne pomysly
-
  po Polsku
