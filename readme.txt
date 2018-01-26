@@ -1,3 +1,3 @@
  rozne pomysly
 
- po polsku
+ po Polsku
