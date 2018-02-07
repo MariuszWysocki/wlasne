@@ -1,12 +1,33 @@
 import random
 import time
 
-def wczytujemy(wpisane):
-    dowyciecia = []
+def naIntListe(wpisane):
     wpisane = wpisane.split(',')
+    zwrot = []
     for i in range(len(wpisane)):
-        dowyciecia.append(int(wpisane[i]))
-    return dowyciecia
+        zwrot.append(int(wpisane[i]))
+    return zwrot
+
+def wczytujemy():
+    dopociecia = input('wprowadz wynik losowania w formacie 1,2,3,4,5+6,7 ')
+    pociete = dopociecia.split('+')
+    print('tak wygla pociete wtępnie na dwie listy {}'.format(pociete))
+
+    dopociecia50 = pociete[0];
+    dopociecia50 = naIntListe(dopociecia50)
+
+    print('tak wyglada dopociecia50 {}'.format(dopociecia50))
+
+    dopociecia10 = pociete[1];
+    dopociecia10 = naIntListe(dopociecia10)
+    print('tak wyglada do pociecia10 {}'.format(dopociecia10))
+
+    lista['lista50'] = wycinamy(lista['lista50'], dopociecia50)
+    print('po wycieciu lista50 wyglada tak {}'.format(lista['lista50']))
+
+    lista['lista10'] = wycinamy(lista['lista10'],dopociecia10)
+    print('po wycieciu lista10 wyglada tak {}'.format(lista['lista10']))
+
 
 
 def wycinamy(lista,dowyciecia):
@@ -35,22 +56,17 @@ lista['lista50'].remove(50)
 print("lista50 po usunieciu skrajnych wartosci {}".format(lista['lista50']))
 print("lista10 wyglada tak {}".format(lista['lista10']))
 
-dopociecia = input('wprowadz wynik losowania w formacie 1,2,3,4,5+6,7 ')
-
-pociete = dopociecia.split('+')
-print('tak wygla pociete wtępnie na dwie listy {}'.format(pociete))
-
-dopociecia50 = pociete[0];
-dopociecia50 = wczytujemy(dopociecia50)
-print('tak wyglada dopociecia50 {}'.format(dopociecia50))
+wczytujemy()
+wczytujemy()
+wczytujemy()
 
 
-dopociecia10 = pociete[1];
-dopociecia10 = wczytujemy(dopociecia10)
-print('tak wyglada do pociecia10 {}'.format(dopociecia10))
 
-lista['lista50'] = wycinamy(lista['lista50'],dopociecia50)
-print('po wycieciu lista50 wyglada tak {}'.format(lista['lista50']))
+
+
+
+
+
 
 
 
