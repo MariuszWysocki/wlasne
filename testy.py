@@ -43,6 +43,7 @@ lista={
     'lista10':[]
 }
 
+liczbazakladow=2
 zmiany=[]
 
 for i in range(50):
@@ -62,10 +63,20 @@ wczytujemy()
 
 
 
+def losujemy (lista,n):
+    for i in range(liczbazakladow):
+        losuje  = random.sample(range(0,len(lista)), n)
+    #    print('teraz z listy wycinamy indexy {}'.format(losuje))
+    #   print('z lista podstawowa {}'.format(lista))
+        obstawiamy=[]
+        for i in losuje:
+            obstawiamy.append(lista[i])
+        print('trzeba obstawic {}'.format(obstawiamy))
+        time.sleep(2)
 
 
-
-
+losujemy(lista['lista50'],5)
+losujemy(lista['lista10'],2)
 
 
 

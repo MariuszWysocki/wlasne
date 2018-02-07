@@ -1,4 +1,5 @@
 import random
+import time
 
 lista=[]
 zmiany=[]
@@ -46,6 +47,12 @@ print ('do wyciecia {}'.format(dowyciecia))
 lista = wycinamy(lista, dowyciecia)
 print('podstawowa lista {}'.format(lista))
 
+print ('usuwamy wyniki z przed przed ostatniego losowania')
+dowyciecia= wczytujemy()
+print ('do wyciecia {}'.format(dowyciecia))
+lista = wycinamy(lista, dowyciecia)
+print('podstawowa lista {}'.format(lista))
+
 print('teraz losujemy 6 liczb z {}'.format(len(lista)))
 
 for i in range(liczbazakladow):
@@ -56,3 +63,4 @@ for i in range(liczbazakladow):
     for i in losuje:
         obstawiamy.append(lista[i])
     print('trzeba obstawic {}'.format(obstawiamy))
+    time.sleep(2)
