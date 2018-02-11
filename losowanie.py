@@ -13,9 +13,9 @@ for i in range(49):
 
 print('podstawowa lista {}'.format(lista))
 print(len(lista))
-print('obcinam skrajne wartości')
+print('obcinam skrajne wartosci i wartosci 1-10')
 
-lista=lista[1:-1]
+lista=lista[11:-1]
 print('podstawowa lista {}'.format(lista))
 
 def wczytujemy():
@@ -47,11 +47,11 @@ print ('do wyciecia {}'.format(dowyciecia))
 lista = wycinamy(lista, dowyciecia)
 print('podstawowa lista {}'.format(lista))
 
-print ('usuwamy wyniki z przed przed ostatniego losowania')
-dowyciecia= wczytujemy()
-print ('do wyciecia {}'.format(dowyciecia))
-lista = wycinamy(lista, dowyciecia)
-print('podstawowa lista {}'.format(lista))
+# print ('usuwamy wyniki z przed przed ostatniego losowania')
+# dowyciecia= wczytujemy()
+# print ('do wyciecia {}'.format(dowyciecia))
+# lista = wycinamy(lista, dowyciecia)
+# print('podstawowa lista {}'.format(lista))
 
 print('teraz losujemy 6 liczb z {}'.format(len(lista)))
 
