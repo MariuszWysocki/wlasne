@@ -37,13 +37,13 @@ def wycinamy(lista,dowyciecia):
                 lista.pop(n)
                 break
     return lista
-
+opcja = 0
 lista={
     'lista50':[],
     'lista10':[]
 }
 
-liczbazakladow=2
+liczbazakladow=int(input('wprowadz liczbe zakladow '))
 zmiany=[]
 
 for i in range(50):
@@ -52,31 +52,52 @@ for i in range(10):
     lista['lista10'].append(i+1)
 
 print("lista50 wyglada tak {}".format(lista['lista50']))
-lista['lista50'].remove(1)
-lista['lista50'].remove(50)
-print("lista50 po usunieciu skrajnych wartosci {}".format(lista['lista50']))
 print("lista10 wyglada tak {}".format(lista['lista10']))
 
-wczytujemy()
-wczytujemy()
-wczytujemy()
+
+while (opcja != 1):
+    a = input('wybierz /a/ dla liczb 1-49 lub /b/ dla losowania 11 - 49')
+    if (a=='a'):
+        lista['lista50'].remove(1)
+        lista['lista50'].remove(50)
+        print("lista50 po usunieciu skrajnych wartosci {}".format(lista['lista50']))
+        wczytujemy()
+        wczytujemy()
+        wczytujemy()
+        opcja =1
+        break
+    if (a=='b'):
+        lista['lista50'] = lista['lista50'][10:-1]
+        print("lista50 po usunieciu skrajnych wartosci {}".format(lista['lista50']))
+        wczytujemy()
+        wczytujemy()
+        opcja =1
+        break
+
+
+
 
 
 
 def losujemy (lista,n):
-    for i in range(liczbazakladow):
+    #for i in range(liczbazakladow):
         losuje  = random.sample(range(0,len(lista)), n)
     #    print('teraz z listy wycinamy indexy {}'.format(losuje))
     #   print('z lista podstawowa {}'.format(lista))
         obstawiamy=[]
         for i in losuje:
             obstawiamy.append(lista[i])
-        print('trzeba obstawic {}'.format(obstawiamy))
+        #print('trzeba obstawic {}'.format(obstawiamy))
         time.sleep(2)
+        return obstawiamy
 
 
-losujemy(lista['lista50'],5)
-losujemy(lista['lista10'],2)
+for i in range(liczbazakladow):
+   a = losujemy(lista['lista50'],5)
+   b = losujemy(lista['lista10'],2)
+   print('obstawiamy {} + {}'.format(a,b))
+
+
 
 
 

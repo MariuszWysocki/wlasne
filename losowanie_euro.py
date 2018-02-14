@@ -22,8 +22,6 @@ def wycinamy(lista,dowyciecia):
 
 liczbazakladow=input('wpisz liczbe zakladow ')
 liczbazakladow = int(liczbazakladow)
-
-
 for i in range(50):
     lista.append(i+1)
 
