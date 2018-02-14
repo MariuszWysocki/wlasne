@@ -3,32 +3,15 @@ import time
 
 lista=[]
 zmiany=[]
-
-liczbazakladow=input('wpisz liczbe zakladow ')
-liczbazakladow = int(liczbazakladow)
-
-
-for i in range(49):
-    lista.append(i+1)
-
-print('podstawowa lista {}'.format(lista))
-print(len(lista))
-print('obcinam skrajne wartosci i wartosci 1-10')
-
-lista=lista[11:-1]
-print('podstawowa lista {}'.format(lista))
+opcja = 0
 
 def wczytujemy():
     dowyciecia = []
-    wpisane = input('wpisz wynik poprzedniego losowania: ')
+    wpisane = input('wpisz wynik losowania: ')
     dowycieciastr = wpisane.split(',')
     for i in range(len(dowycieciastr)):
         dowyciecia.append(int(dowycieciastr[i]))
     return dowyciecia
-
-dowyciecia= wczytujemy()
-print('do wyciecia')
-print (dowyciecia)
 
 def wycinamy(lista,dowyciecia):
     for i in range(len(dowyciecia)):
@@ -38,20 +21,66 @@ def wycinamy(lista,dowyciecia):
                 break
     return lista
 
-lista = wycinamy(lista, dowyciecia)
-print(lista)
 
-print ('usuwamy wyniki z przed ostatniego losowania')
-dowyciecia= wczytujemy()
-print ('do wyciecia {}'.format(dowyciecia))
-lista = wycinamy(lista, dowyciecia)
+liczbazakladow=input('wpisz liczbe zakladow ')
+liczbazakladow = int(liczbazakladow)
+##tworzymy liste podstawowa
+for i in range(49):
+    lista.append(i+1)
 print('podstawowa lista {}'.format(lista))
+print(len(lista))
+## wybieramy opcje losowania
+while (opcja != 1):
+    a = input('wybierz /a/ dla liczb 1-49 lub /b/ dla losowania 11 - 49')
+    if (a=='a'):
+        print('obcinam skrajne wartosci 1 i 49')
+        lista = lista[1:-1]
+        print('podstawowa lista {}'.format(lista))
 
-# print ('usuwamy wyniki z przed przed ostatniego losowania')
-# dowyciecia= wczytujemy()
-# print ('do wyciecia {}'.format(dowyciecia))
-# lista = wycinamy(lista, dowyciecia)
-# print('podstawowa lista {}'.format(lista))
+        dowyciecia = wczytujemy()
+        print('do wyciecia {}'.format(dowyciecia))
+        lista = wycinamy(lista, dowyciecia)
+        print('podstawowa lista {}'.format(lista))
+
+        print('usuwamy wyniki z przed ostatniego losowania')
+        dowyciecia = wczytujemy()
+        print('do wyciecia {}'.format(dowyciecia))
+        lista = wycinamy(lista, dowyciecia)
+        print('podstawowa lista {}'.format(lista))
+
+        print ('usuwamy wyniki z przed przed ostatniego losowania')
+        dowyciecia= wczytujemy()
+        print ('do wyciecia {}'.format(dowyciecia))
+        lista = wycinamy(lista, dowyciecia)
+        print('podstawowa lista {}'.format(lista))
+
+        break
+        opcja = 1
+
+    if (a=='b'):
+        print('obcinam skrajne wartosci i wartosci 1-11')
+        lista = lista[10:-1]
+        print('podstawowa lista {}'.format(lista))
+
+        dowyciecia = wczytujemy()
+        print('do wyciecia {}'.format(dowyciecia))
+        lista = wycinamy(lista, dowyciecia)
+        print('podstawowa lista {}'.format(lista))
+
+        print('usuwamy wyniki z przed ostatniego losowania')
+        dowyciecia = wczytujemy()
+        print('do wyciecia {}'.format(dowyciecia))
+        lista = wycinamy(lista, dowyciecia)
+        print('podstawowa lista {}'.format(lista))
+
+        # print ('usuwamy wyniki z przed przed ostatniego losowania')
+        # dowyciecia= wczytujemy()
+        # print ('do wyciecia {}'.format(dowyciecia))
+        # lista = wycinamy(lista, dowyciecia)
+        # print('podstawowa lista {}'.format(lista))
+
+        break
+        opcja = 1
 
 print('teraz losujemy 6 liczb z {}'.format(len(lista)))
 
