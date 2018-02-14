@@ -33,7 +33,7 @@ print(len(lista))
 while (opcja != 1):
     a = input('wybierz /a/ dla liczb 1-49 lub /b/ dla losowania 11 - 49')
     if (a=='a'):
-        print('obcinam skrajne wartosci 1 i 49')
+        print('wybrales /a/ obcinam skrajne wartosci 1 i 49')
         lista = lista[1:-1]
         print('podstawowa lista {}'.format(lista))
 
@@ -58,7 +58,7 @@ while (opcja != 1):
         opcja = 1
 
     if (a=='b'):
-        print('obcinam skrajne wartosci i wartosci 1-11')
+        print('wybrales /b/ obcinam skrajne wartosci i wartosci 1-11')
         lista = lista[10:-1]
         print('podstawowa lista {}'.format(lista))
 
