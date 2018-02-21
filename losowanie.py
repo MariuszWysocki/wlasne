@@ -84,8 +84,10 @@ while (opcja != 1):
 
 print('teraz losujemy 6 liczb z {}'.format(len(lista)))
 
+rnd  = random.SystemRandom()
+
 for i in range(liczbazakladow):
-    losuje  = random.sample(range(0,len(lista)), 6)
+    losuje  = rnd.sample(range(0,len(lista)), 6)
 #    print('teraz z listy wycinamy indexy {}'.format(losuje))
 #   print('z lista podstawowa {}'.format(lista))
     obstawiamy=[]
